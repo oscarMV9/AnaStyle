@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Auth</title>
+    <link rel="stylesheet" href="{% static 'css/formsAuth.css' %}">
+</head>
+<body>
+    <div class="body">
+        <div class="container-form register">
+            <div class="information">
+                <div class="info-childs">
+                    <h2>Bienvenido</h2>
+                    <p>Regístrate para poder acceder a nuestro sistema y ver nuestro catálogo</p>
+                    <input type="button" value="Iniciar Sesión" id="sign-in" />
+                </div>
+            </div>
+            <div class="form-information">
+                <div class="form-information-childs">
+                    <h2>Registro</h2>
+                    <p>Usa tu nombre para registrarte</p>
+                    <form method="POST" action="{% url 'registro' %}" class="form form-register">
+                        {% csrf_token %}
+                        <div>
+                            <label>
+                                <i class='bx bx-user'></i>
+                                <input type="text" name="username" placeholder="Usuario" required autocomplete="off">
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <i class='bx bx-envelope'></i>
+                                <input type="email" name="email" placeholder="Correo" required autocomplete="off">
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <i class='bx bx-lock-alt'></i>
+                                <input type="password" name="password" placeholder="Contraseña" required>
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <i class='bx bx-lock-alt'></i>
+                                <input type="password" name="password_confirm" placeholder="Confirmar contraseña" required>
+                            </label>
+                        </div>
+                        <button type="submit">Registrarse</button>
+                    </form>
+                    {% for message in messages %}
+                        <p class="mensaje">{{ message }}</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
