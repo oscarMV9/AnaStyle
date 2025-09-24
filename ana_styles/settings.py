@@ -18,7 +18,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-AUTH_USER_MODEL = 'usuarios.CustomUser'
+AUTH_USER_MODEL = 'autentications.CustomUser'
 
 
 # Application definition
@@ -30,7 +30,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'usuarios',
+    'autentications',
+    'indexPages',
 ]
 
 TAILWIND_APP_NAME = "theme"

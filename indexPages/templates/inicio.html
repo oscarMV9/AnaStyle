@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'dist/styles.css' %}">
+    <title>{% block title %}Ana Styles{% endblock %}</title>
+</head>
+<body class="">
+    {% include 'bloques_reutilizables/navbar.html'%}
+    <section class="relative h-screen bg-cover bg-no-repeat bg-fixed bg-white/30 backdrop-blur-sm">
+    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="relative z-10 flex flex-col items-center justify-center min-h-screen text-center px-4">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Bienvenido a Ana Styles</h1>
+        <p class="text-lg md:text-2xl text-white mb-8 max-w-xl">
+            Tu tienda en línea de ropa y accesorios de moda. Explora nuestra colección y encuentra tu estilo único.
+        </p>
+    </div>
+</section>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+AOS.init();
+</script>
+</body>
+</html>
