@@ -6,3 +6,6 @@ def indexPages(request):
 
 def productosPages(request):
     return render(request, 'productos.html')
+
+def contactoPages(request):
+    return render(request, 'contactenos.html')

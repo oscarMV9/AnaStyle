@@ -30,12 +30,18 @@
 				<img src="{% static 'img/logo_ana.png' %}" alt="Logo" class="h-16 md:h-20 w-auto" />
 			</a>
 		</div>
-		<div class="flex flex-row  mx-2 md:mx-10 justify-end w-full max-md:py-3 max-md:justify-around max-md:items-center">
-			<a href="{% url 'indexPage' %}" class="link-underline text-center py-1 md:py-2 px-1 mx-1 md:mx-3 text-base md:mb-2 md:text-[20px] text-amber-50">Inicio</a>
-			<a href="{% url 'productosPage' %}" class="link-underline text-center py-1 md:py-2 px-1 mx-1 md:mx-3 md:mb-2 text-base md:text-[20px] text-amber-50">Productos</a>
-			<a href="" class="link-underline text-center py-1 md:py-2 px-1 mx-1 md:mx-3 md:mb-2 text-base md:text-[20px] text-amber-50 max-md:hidden">Contactanos!</a>
-			<a href="{% url 'ingreso' %}" class="link-underline text-center py-1 md:py-2 md:mb-2 px-1 mx-1 md:mx-3 max-md:md:mb-2 text-base md:text-[20px] text-amber-50">Ingresar</a>
-			<a href="{% url 'registro' %}" class="link-underline text-center py-1 md:py-2 px-1 mx-1 md:mx-3 md:mb-2 text-base md:text-[20px] text-amber-50 max-md:hidden">Registrarse</a>
-		</div>
+    {% if user.is_authenticated %}
+    <div class="flex flex-row mx-2 md:mx-10 justify-end w-full max-md:py-3 max-md:justify-around max-md:items-center">
+      <a href="{% url 'logout' %}" class="link-underline text-center py-1 md:py-2 px-1 mx-1 md:mx-3 md:mb-2 text-base md:text-[20px] text-amber-50">Cerrar sesión</a>
+    </div>
+  {% else %}
+    <div class="flex flex-row mx-2 md:mx-10 justify-end w-full max-md:py-3 max-md:justify-around max-md:items-center">
+      <a href="{% url 'indexPage' %}" class="link-underline text-center py-1 md:py-2 px-1 mx-1 md:mx-3 text-base md:mb-2 md:text-[20px] text-amber-50">Inicio</a>
+      <a href="{% url 'productosPage' %}" class="link-underline text-center py-1 md:py-2 px-1 mx-1 md:mx-3 md:mb-2 text-base md:text-[20px] text-amber-50">Noticias</a>
+      <a href="{% url 'contactoPage' %}" class="link-underline text-center py-1 md:py-2 px-1 mx-1 md:mx-3 md:mb-2 text-base md:text-[20px] text-amber-50 max-md:hidden">Contactanos!</a>
+      <a href="{% url 'ingreso' %}" class="link-underline text-center py-1 md:py-2 md:mb-2 px-1 mx-1 md:mx-3 text-base md:text-[20px] text-amber-50">Ingresar</a>
+      <a href="{% url 'registro' %}" class="link-underline text-center py-1 md:py-2 px-1 mx-1 md:mx-3 md:mb-2 text-base md:text-[20px] text-amber-50">Registrarse</a>
+    </div>
+  {% endif %}
 	</nav>
 </div>

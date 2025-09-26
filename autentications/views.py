@@ -2,9 +2,12 @@ from .models import CustomUser
 from django.contrib.auth import authenticate, login
 from django.shortcuts import redirect,render
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
 
-def index(request):
-    return render(request, 'index.html')
+@login_required
+def home(request):
+    return render(request, 'home.html')
 
 def registro(request):
     if request.method == 'POST':
@@ -47,5 +50,6 @@ def ingreso(request):
     
     return render(request, 'ingreso.html')
 
-def home(request):
-    return render(request ,'home.html')
+def logout_view(request):
+    logout(request)
+    return redirect('ingreso')

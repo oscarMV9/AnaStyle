@@ -9,11 +9,11 @@
 </head>
 <body>
     {% include 'bloques_reutilizables/navbar.html'%}
-    <section class="flex flex-col items-center justify-center bg-gray-100 pt-30">
-        <div class="flex flex-col md:flex-row items-center justify-center gap-4 py-8 px-4">
+    <section class="flex flex-col items-center justify-center bg-gradient-to-r from-cyan-500 to-blue-500 pt-30">
+        <div class="w-full flex flex-col md:flex-row items-center justify-center gap-10 min-md:gap-8 py-8 px-6">
             <div class="flex flex-col py-8 max-w-md md:px-1 animate-fade-left animate-delay-[50ms] animate-ease-linear">
-                <h2 class="font-semibold text-4xl pb-1">Encuentra los mejores productos</h2>
-                <p class="font-extrabold pt-2">Explora nuestros diversos productos. Tu comodidad siempre es lo primero</p>
+                <h2 class="font-semibold text-5xl pb-4 animate-fade-left animate-delay-100">Encuentra los mejores productos</h2>
+                <p class="font-extrabold mt-4 animate-fade-right animate-delay-1000">Explora nuestros diversos productos. Tu comodidad siempre es lo primero</p>
             </div>
             <div class="max-w-md bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 animate-fade-up">
                 <a href="#">
@@ -24,7 +24,7 @@
                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Los ultimos lanzamientos en este 2025!</h5>
                     </a>
                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Revisa nuestros ultimos lanzamientos y escoje el estilo que te guste!</p>
-                    <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 animate-bounce animate-infinite animate-delay-1000">
                         Quiero ver!
                         <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -34,5 +34,105 @@
             </div>
         </div>
     </section>
+    <section class="flex items-center justify-center gap-5 bg-gradient-to-r from-cyan-500 to-blue-500 pt-10 px-3 border-t-2 border-white">
+        <div class="w-full flex flex-col md:flex-row items-center justify-center gap-10 py-8 px-6">
+            <div class="max-w-3xl px-4 py-8 flex flex-col items-center justify-center">
+            <h2 class="text-4xl font-bold text-white mb-6 text-center animate-fade-down">¿Qué dicen nuestros clientes?</h2>
+            <p class="text-lg text-white mb-8 max-w-xl text-center animate-fade-up animate-delay-500">Nos enorgullece ofrecer productos de alta calidad y un servicio excepcional. Aquí tienes algunas opiniones de nuestros clientes satisfechos</p>
+        </div>
+        <div class="ml-4 flex-col items-center animate-fade-up animate-delay-1000">
+            <div id="carousel" class="relative backdrop-blur-md bg-[#000]/30 shadow-lg rounded-2xl p-6 min-h-[120px] overflow-hidden">
+                <div class="carousel-item text-center text-lg font-medium hidden transition-transform duration-300">
+                    <div class="flex flex-col items-center">
+                        <img src="{% static 'img/avatar_1.png' %}" alt="Cliente 1" class="w-16 h-16 rounded-full mb-2 shadow-md">
+                        <h2 class="font-bold text-base mb-1">Manuel segovia</h2>
+                    </div>  
+                    <p class="italic text-white">"Excelentes productos, la mejor calidad"</p>
+                </div>
+                <div class="carousel-item text-center text-lg font-medium hidden transition-transform duration-300">
+                    <div class="flex flex-col items-center">
+                        <img src="{% static 'img/avatar_2.png' %}" alt="Cliente 2" class="w-16 h-16 rounded-full mb-2 shadow-md">
+                        <h2 class="font-bold text-base mb-1">Anita Herrera</h2>
+                    </div>
+                    <p class="italic text-white">"Le recomendé este sitio a mi madre 😍"</p>
+                </div>
+                <div class="carousel-item text-center text-lg font-medium hidden transition-transform duration-300">
+                    <div class="flex flex-col items-center">
+                        <img src="{% static 'img/avatar_3.png' %}" alt="Cliente 3" class="w-16 h-16 rounded-full mb-2 shadow-md">
+                        <h2 class="font-bold text-base mb-1">Ana Martínez</h2>
+                    </div>
+                    <p class="italic text-white">"Excelente servicio, súper rápido"</p>
+                </div>
+                <div class="carousel-item text-center text-lg font-medium hidden transition-transform duration-300">
+                    <div class="flex flex-col items-center">
+                        <img src="{% static 'img/avatar_3.png' %}" alt="Cliente 3" class="w-16 h-16 rounded-full mb-2 shadow-md">
+                        <h2 class="font-bold text-base mb-1">Angelica Girando</h2>
+                    </div>
+                    <p class="italic text-white">"Me encanto! Etregas super rapidas"</p>
+                </div>
+                <div class="carousel-item text-center text-lg font-medium hidden transition-transform duration-300">
+                    <div class="flex flex-col items-center">
+                        <img src="{% static 'img/avatar_3.png' %}" alt="Cliente 3" class="w-16 h-16 rounded-full mb-2 shadow-md">
+                        <h2 class="font-bold text-base mb-1">Camilo Guzman</h2>
+                    </div>
+                    <p class="italic text-white">"Pense que era caro, pero manejan mejor precios"</p>
+                </div>
+                <div class="carousel-item text-center text-lg font-medium hidden transition-transform duration-300">
+                    <div class="flex flex-col items-center">
+                        <img src="{% static 'img/avatar_3.png' %}" alt="Cliente 3" class="w-16 h-16 rounded-full mb-2 shadow-md">
+                        <h2 class="font-bold text-base mb-1">Ana Martínez</h2>
+                    </div>
+                    <p class="italic text-white">"Excelente servicio, súper rápido"</p>
+                </div>
+                </div>
+                    <div class="hidden">
+                        <div class="flex justify-center gap-4 mt-4">
+                        <button id="prev" class="px-3 py-1 bg-gray-200 rounded-full hover:bg-gray-300">⬅️</button>
+                        <button id="next" class="px-3 py-1 bg-gray-200 rounded-full hover:bg-gray-300">➡️</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 </body>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const items = document.querySelectorAll(".carousel-item");
+    let current = 0;
+
+    function showItem(index) {
+        items.forEach((item, i) => {
+            item.classList.toggle("hidden", i !== index);
+        });
+    }
+
+    document.getElementById("prev").addEventListener("click", () => {
+    current = (current - 1 + items.length) % items.length;
+    showItem(current);
+  });
+
+  let startX = 0;
+  const carousel = document.getElementById("carousel");
+  carousel.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+  });
+  carousel.addEventListener("touchend", (e) => {
+    const endX = e.changedTouches[0].clientX;
+    if (startX - endX > 50) {
+      current = (current + 1) % items.length;
+      showItem(current);
+    } else if (endX - startX > 50) {
+      current = (current - 1 + items.length) % items.length;
+      showItem(current);
+    }
+  });
+  setInterval(() => {
+    current = (current + 1) % items.length;
+    showItem(current);
+  }, 5000);
+
+  showItem(current);
+});
+</script>
 </html>
